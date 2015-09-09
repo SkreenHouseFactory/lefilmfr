@@ -1,0 +1,198 @@
+@media screen and (min-width: 760px) { #close-search { display: none !important; } }
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+    .row.row-film { padding: 0; }
+    .film { margin: 20px 0; }
+    .film:first-child { margin-bottom: 20px; }
+    .film:last-child { margin-top: 20px; }
+
+    .film-wrapper {
+        width: 280px;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .film { margin: 10px 0; }
+    #film #film-info-container .synopsis-container { padding-bottom: 20px; }
+}
+
+/**
+ * For iPad landscape
+ */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1048px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    .row.row-film { padding: 0; }
+    .film { margin: 10px 0 !important; }
+    .film-wrapper {
+        width: 250px;
+        height: 350px;
+    }
+
+    .first { height: 845px !important; }
+    .films-form-right > div:not(.first), .films-form-left > div:not(.first) { height: 415px !important; }
+}
+
+@media screen and (max-width: 765px) {
+    .navbar-brand { margin-left: 15px !important; }
+    .toggle-burger > span { display: inline; }
+
+    .nav.navbar-search {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        margin: 0;
+    }
+    .nav.navbar-search label {
+        position: absolute;
+        right: 20px;
+        top: 25px;
+    }
+    .navbar-search > div { width: 100%; }
+    .nav.navbar-search input[type="search"] {
+        width: 100%;
+        max-width: 100%;
+        display: none;
+        padding: 10px 25px;
+    }
+
+    #cookies-container button {
+        width: 100%;
+        padding: 4px;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .navbar-brand { margin-left: 15px !important; }
+    nav.sub-nav { padding: 0 0 10px 0; }
+    .ios-fix-padding { padding: 0 18px; }
+    .sub-nav-film h2 { font-size: 18px; }
+    .nav.navbar-search label { right: 8px !important; }
+    nav.sub-nav ul > li > a { padding-left: 20px; }
+    nav.sub-nav ul > li > a:hover, nav.sub-nav ul > li > a.active { padding-left: 25px !important; }
+    nav.sub-nav-film { padding: 10px 0 10px 0; }
+
+    #film #player { height: 200px; }
+    #film #player i { line-height: 200px; }
+    #film #film-info-container .synopsis-container { padding-top: 10px; padding-bottom: 20px; }
+    .recommendations h2 { font-size: 1.2em; }
+
+    .navbar-search > div { width: 100%; }
+    .nav.navbar-search input[type="search"] {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .row.row-film { padding: 0; }
+    .film { margin: 5px 0 !important; }
+    .film:first-child { margin-bottom: 20px; }
+    .film:last-child { margin-top: 20px; }
+
+    .film-wrapper {
+        width: 200px;
+        height: 300px;
+    }
+
+    /**
+     * Single film
+     */
+    .first { height: 300px !important; }
+    .films-form-right > div:not(.first), .films-form-left > div:not(.first) { height: 143px !important; }
+}
+
+@media only screen and (max-width: 640px) and (orientation: landscape) {
+    .film { width: 33.33333333% !important; }
+    .first { height: 500px !important; }
+    .films-form-right > div:not(.first), .films-form-left > div:not(.first) { height: 243px !important; }
+}
+
+/**
+ * Iphone 6 landscape
+ */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : landscape) {
+    .film-main-grid { width: 33.33333333% !important; }
+    .ios-fix-padding { padding: 0 18px; }
+    nav.sub-nav .ios-fix-padding { padding: 0; }
+    nav.sub-nav ul > li > a { padding-left: 24px; }
+    .sub-nav.sub-nav-film .container-fluid { padding-left: 0; }
+    .films-form-right > div.first { height: 555px; }
+    .films-form-right > div, .films-form-left > div { height: 270px; }
+
+    .navbar-brand > img { padding: 1px 1px 1px 0 !important; }
+    nav.sub-nav { padding: 10px 18px 10px 18px; }
+    .navbar-collapse { box-shadow: none; }
+    .navbar-toggle.burger { padding: 0; margin-top: 4px;}
+    .toggle-burger > span { top: 6px; }
+}
+
+/**
+ * iPhone 6 portrait
+ */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) {
+    .navbar-brand > img { padding: 1px 1px 1px 0 !important; }
+    nav.sub-nav { padding: 0 0 10px 0; }
+    .navbar-collapse { box-shadow: none; }
+    .navbar-toggle.burger { padding: 0; }
+    .toggle-burger > span { top: 11px; }
+
+    .sub-nav-film { padding: 10px 0 10px 0 !important; }
+}
+
+/**
+ * iPad landscape
+ */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 1)  {
+    .ios-fix-padding { padding: 0 18px; }
+    nav.sub-nav .ios-fix-padding { padding: 0; }
+    nav.sub-nav ul > li > a { padding: 4px 8px; }
+    .navbar-collapse.collapse { padding-left: 8px; }
+    .sub-nav.sub-nav-film .container-fluid { padding-left: 0; }
+}
+
+/**
+ * iPad portrait
+ */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 1)  {
+    .ios-fix-padding { padding: 0 18px; }
+    nav.sub-nav .ios-fix-padding { padding: 0; }
+    .toggle-burger > span { display: inline; }
+    nav.sub-nav { padding: 10px 20px; }
+    .collapse.in {
+        height: auto !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse.collapse:not(.in) {
+        display: none !important;
+    }
+    .navbar-nav > li {
+        float: none;
+    }
+    nav.sub-nav li { margin: 0; }
+    nav.sub-nav ul > li > a { padding-left: 10px; }
+
+    .sub-nav.sub-nav-film .container-fluid { padding-left: 0; }
+    .films-form-right > div.first { height: 685px; }
+    .films-form-right > div, .films-form-left > div { height: 335px; }
+}
+
+@media screen and (max-width: 400px) {
+    .navbar-brand > img { padding: 5px 5px 5px 0; }
+    .film-wrapper {
+        width: 170px;
+        height: 270px;
+    }
+    .film:first-child, .film:nth-child(2) { margin-top: 10px !important; }
+    .film { margin: 5px 0 !important; }
+}
+
+@media screen and (max-width: 350px) {
+    .film-wrapper {
+        width: 140px;
+        height: 230px;
+    }
+    .film { margin: 5px 0 !important; }
+}

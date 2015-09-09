@@ -1,13 +1,54 @@
+<!doctype html>
 <html>
-	<head>
-		<link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
-	</head>
+    {% set title = "Lefilm.fr" %}
+    {% set description = "Votre nouveau guide cinéma personnalisé. Retrouvez toutes les bandes annonces de vos films en streaming, les avis des spectateurs et de vos amis, les nouveautés et les films à venir, et obtenez des suggestions ciné selon vos préférences" %}
+    {% include 'fragments/head.twig.php' %}
+    <body>
 
-	<body>
-		<div id="content">{% block content %}{% endblock %}</div>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-		<div id="footer">
-			{% include "_footer.twig" %}
-		</div>
-	</body>
+    <header>
+        {% include '/fragments/top-header.twig.php' %}
+        <nav class="sub-nav" data-toggle="collapse" data-target=".navbar-collapse">
+            <div class="container-fluid ios-fix-padding">
+                <!-- <button type="button" class="navbar-toggle collapsed burger" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="fa fa-tags"></i>
+                </button> -->
+                <div class="toggle-burger">
+                    <span>Tous les films</span>
+                    <button type="button" class="navbar-toggle collapsed burger">
+                        <!-- <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> -->
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="collapse-menu">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a alt="Tous les films" title="Tous les films" class="active" href="/">Tous les films</a></li>
+                        <li><a alt="Action" title="Action" href="/">Action</a></li>
+                        <li><a alt="Comédies" title="Comédies" href="/">Comédies</a></li>
+                        <li><a alt="Drames" title="Drames" href="/">Drames</a></li>
+                        <li><a alt="Français" title="Français" href="/">Français</a></li>
+                        <li><a alt="Classiques" title="Classiques" href="/">Classiques</a></li>
+                        <li><a alt="Thrillers" title="Thrillers" href="/">Thrillers</a></li>
+                        <li><a alt="Arts" title="Arts" href="/">Arts</a></li>
+                        <li><a alt="Fantastiques" title="Fantastiques" href="/">Fantastiques</a></li>
+                        <li><a alt="Horreur" title="Horreur" href="/">Horreur</a></li>
+                        <li><a alt="Documentaires" title="Documentaires" href="/">Documentaires</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    {% include '/fragments/cookies.twig.php' %}
+    {% include '/fragments/footer.twig.php' %}
+    {% include '/fragments/script.twig.php' %}
+</body>
 </html>

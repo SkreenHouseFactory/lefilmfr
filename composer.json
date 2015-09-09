@@ -15,7 +15,7 @@
         "yusukezzz/slim-debugbar": "1.*",
         "zeuxisoo/slim-whoops": "0.3.0",
         "monolog/monolog": "1.*",
-        "flynsarmy/slim-monolog": "1.*"
+        "flynsarmy/slim-monolog": "1.*",
         "swiftmailer/swiftmailer": "@stable",
         "guzzle/guzzle": "~3.9"
     },

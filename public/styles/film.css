@@ -1,0 +1,219 @@
+.sub-nav-film {
+    color: #fff;
+}
+.sub-nav-film small { font-size: 12px; }
+.sub-nav-film h2 {
+    margin: 0;
+    font-weight: normal;
+}
+
+#film #film-info-container {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+#film #player {
+    width: 100%;
+    height: 300px;
+    background-color: #000;
+    cursor: pointer;
+}
+#film #player i {
+    line-height: 300px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    width: 100%;
+}
+#film #film-info-container .film-info {
+    color: #a0a0a0;
+    padding: 15px;
+    font-size: 13px;
+}
+#film #film-info-container .film-info .rank { margin-bottom: 10px; }
+#film #film-info-container .film-info .rank i {
+    color: #d8dde4;
+    font-size: 18px;
+}
+#film #film-info-container .film-info .rank i.full {
+    color: #fdca2f;
+}
+#film #film-info-container .film-info p {
+    margin: 0;
+}
+#film #film-info-container .film-info h1 {
+    text-indent: -9999px;
+    opacity: 0;
+    position: absolute;
+}
+#film #film-info-container .film-info .film-info-wrapper {
+    margin-bottom: 10px;
+}
+#film #film-info-container .synopsis-container {
+    font-size: 13px;
+    padding-top: 20px;
+    padding-right: 20px;
+    text-align: justify;
+}
+/** Other videos **/
+#film #other-videos {
+
+}
+#film #other-videos h3 {
+    margin: 0;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+#film #other-videos ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#film #other-videos ul li {
+    margin: 20px 0;
+    color: #a0a0a0;
+    cursor: pointer;
+}
+#film #other-videos ul li:first-child { margin-top: 0; }
+#film #other-videos ul li:last-child { margin-bottom: 0; }
+#film #other-videos ul li p span.black { color: #000; }
+#film #other-videos ul li div.thumb {
+    height: 100px;
+    background-image: url('/images/dummy/minion-thumb.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.recommendations {
+	background-color: #e4e4e4;
+	padding : 40px 0;
+}
+
+.recommendations h2 {
+	font-weight: 400;
+	margin-bottom: 10px;
+	margin-top: 0;
+	font-size: 1.8em;
+}
+.recommendations h3 {
+	font-weight: 300;
+	margin-top: 40px;
+	margin-bottom: 10px;
+	font-size: 1.6em;
+
+}
+
+
+.film .film-infos {
+
+}
+.films-form-right > div,  .films-form-left > div{
+	padding-left : 0;
+	width : 30%;
+	float: left;
+	margin-bottom : 15px;
+	height: 200px;
+
+
+}
+.films-form-right > div.first {
+	width: 67%;
+	margin-right: 3%;
+	height: 415px;
+
+}
+.films-form-right > div > div.image, .films-form-left > div > div.image {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	-moz-box-shadow: 0px 0px 10px 5px #cfcfcf;
+	-webkit-box-shadow: 0px 0px 10px 5px #cfcfcf;
+	-o-box-shadow: 0px 0px 10px 5px #cfcfcf;
+	box-shadow: 0px 0px 10px 5px #cfcfcf;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=NaN, Strength=10);
+
+
+}
+.films-form-right > div > div.image > div.internShadow, .films-form-left > div > div.image > div.internShadow {
+	width: 100%;
+	height: 100%;
+	-moz-box-shadow: inset 0px -50px 50px 15px rgba(0,0,0,0.3);
+	-webkit-box-shadow: inset 0px -50px 50px 15px rgba(0,0,0,0.3);
+	-o-box-shadow: inset 0px -50px 50px 15px rgba(0,0,0,0.3);
+	box-shadow: inset 0px -50px 50px 15px rgba(0,0,0,0.3);
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=rgba(0,0,0,0.3), Direction=90, Strength=50);
+}
+.films-form-right > div > img, .films-form-left > div > img {
+	overflow: hidden;
+}
+.films-form-right > div.last {
+	margin-bottom: 0;
+}
+.films-form-left > div{
+	margin-right: 3%;
+}
+
+.hide {
+	display : none;
+}
+.show {
+	display : block;
+}
+
+.clear {
+	clear: both;
+}
+
+.actions .see-more {
+	float: left;
+	padding :5px 10px;
+	background-color: #fff;
+	color : #1e1e1e;
+	border-radius: 5px;
+	border : 1px #D0D0D0 solid;
+}
+.actions .controls {
+	float: right;
+}
+
+.actions .controls a {
+	color : #D0D0D0;
+	-webkit-transition: color .3s;
+    -moz-transition: color .3s;
+    -o-transition: color .3s;
+    transition: color .3s;
+	font-size: 2em;
+}
+.actions .controls > a {
+	float: left;
+
+}
+.actions .controls ul {
+	padding : 7px 10px;
+	float: left;
+
+}
+.actions .controls li {
+	float: left;
+	list-style : none;
+	margin-right: 5px;
+}
+.actions .controls li a {
+	font-size: 1.2em;
+}
+.actions .controls li a.active {
+	color : #8A8A8A;
+}
+
+.actions .controls a:hover {
+	color : #8A8A8A;
+	-webkit-transition: color .3s;
+    -moz-transition: color .3s;
+    -o-transition: color .3s;
+    transition: color .3s;
+}
+.actions .controls li:last-child {
+	margin-right: 0;
+}
+>>>>>>> lucas/soldschool

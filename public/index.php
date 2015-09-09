@@ -4,7 +4,7 @@ $loader = require __DIR__.'/../vendor/autoload.php';
 
 //env
 $env = 'production';
-if (preg_match('/.(dev|recette).ebbandflow.fr/', $_SERVER['HTTP_HOST']) && !isset($_GET['force_prod'])) {
+if (preg_match('/.myskreen.net/', $_SERVER['HTTP_HOST']) && !isset($_GET['force_prod'])) {
   error_reporting(E_ALL | E_STRICT);
   ini_set('display_errors', 'On');
   ini_set('display_startup_errors', 'On');
@@ -71,7 +71,7 @@ $app->container->singleton('smart_controller', function() use($app, $session){
 
 // Routing
 $app->get('/', function () use ($app) {
-    $app->smart_controller->render('Auth', 'deconnexion');
+    $app->smart_controller->render('Home', 'index');
 });
 
 $app->run();

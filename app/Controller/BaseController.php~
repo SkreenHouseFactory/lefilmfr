@@ -30,7 +30,7 @@ abstract class BaseController {
     //$request->setBody($this->getUserQuery($user));
     try {
       $response = $request->send();
-      return $response->json();
+      return (string)$response->getBody();
     } catch(\Exception $e){
       die('<error>API error</error> '.$e->getMessage());
     }

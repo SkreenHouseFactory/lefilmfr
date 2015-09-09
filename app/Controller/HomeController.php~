@@ -6,7 +6,7 @@ namespace App\Controller ;
 class HomeController extends BaseController {
 	public function indexAction(\Slim\Http\Request $request){
     $data = $this->callApi('program/78.json');
-
+    print_r($data);
   	return $this->app->render('home/index.twig', array(
       'program' => $data
   	)) ;

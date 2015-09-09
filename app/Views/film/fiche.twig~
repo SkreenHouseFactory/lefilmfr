@@ -11,7 +11,9 @@
 {% block content %}
   <div class="container-fluid" id="film">
       <div class="row" id="film-info-container">
+
           {% include '/fragments/film-info.twig.php' %}
+
           {% include '/fragments/other-videos.twig.php' %}
       </div>
   </div>

@@ -8,6 +8,14 @@ class HomeController extends BaseController {
 
   	return $this->app->render('home/index.twig', array(
 
-  		)) ;
+  	)) ;
+  }
+
+
+	public function searchAction(\Slim\Http\Request $request){
+
+  	return $this->app->render('home/index.twig', array(
+
+  	)) ;
   }
 }

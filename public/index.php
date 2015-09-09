@@ -73,5 +73,11 @@ $app->container->singleton('smart_controller', function() use($app, $session){
 $app->get('/', function () use ($app) {
     $app->smart_controller->render('Home', 'index');
 });
+$app->get('/recherche/:q', function () use ($app) {
+    $app->smart_controller->render('Home', 'search');
+});
+$app->get('/film/:id-:slug', function () use ($app) {
+    $app->smart_controller->render('Film', 'fiche');
+});
 
 $app->run();

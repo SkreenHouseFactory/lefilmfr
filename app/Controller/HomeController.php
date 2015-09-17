@@ -8,15 +8,16 @@ class HomeController extends BaseController {
     $data = $this->callApi('program/78.json');
 
   	return $this->app->render('home/index.twig', array(
-      'program' => $data
+      'programs' => $data
   	)) ;
   }
 
 
 	public function searchAction(\Slim\Http\Request $request){
+    $data = $this->callApi('search/'.$request->post('q').'.json');
 
   	return $this->app->render('home/index.twig', array(
-
+      'programs' => $data
   	)) ;
   }
 }

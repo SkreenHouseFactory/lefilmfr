@@ -102,4 +102,12 @@ $(document).ready(function() {
         });
     })();
 
+    /**
+     * related
+     */
+    (function() {
+        $('.film > div[url]').on('click', function() { 
+          document.location = '/film/'+$(this).attr('url')
+        });
+    })();
 });

@@ -9,8 +9,7 @@
         <div class="nav navbar-nav navbar-right navbar-search __toggle">
             <label for="search"><i class="fa fa-search"></i></label>
             <div id="close-search" class="__toggle"><i class="fa fa-times"></i></div>
-            <div>
-                <input type="search" class="__toggle" name="search" spellcheck="false" role="search" id="search" value="Titre, acteur, réalisateur ..." />
+            <div><form action="/recherche" method="post"><input type="search" class="__toggle" name="search" spellcheck="false" role="search" id="search" name="q" placeholder="Titre, acteur, réalisateur ..." /></form>
             </div>
         </div>
     </div>

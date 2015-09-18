@@ -11,16 +11,22 @@
 {% block content %}
     <div class="container-fluid" id="grid">
         <div class="row row-film">
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 film film-main-grid">
+
+	{% for p in programs %}
+    {% if loop.index is divisible by(6) %}
+      </div>
+      <div class="row row-film">
+    {% endif %}
+	      <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 film film-main-grid">
                 <div class="film-container">
-                    <a href="film/divergente-2.php" alt="Divergente 2" title="Divergente 2">
-                        <div class="film-wrapper" style="background-image: url('/images/dummy/divergente2.jpg');">
+                    <a href="/film/{{ p.seo_url|split('/')[3] }}" alt="{{ p.title }}" title="{{ p.title }}">
+                        <div class="film-wrapper" style="background-image: url('{{ p.picture }}');">
                             <section class="film-infos">
-                                <h2>Divergente 2</h2>
+                                <h2>{{ p.title }}</h2>
                                 <p>
-                                    <span>Science-fiction</span>
-                                    <span>2015</span>
-                                    <span>1h59</span>
+                                    <span>{{ p.categories|first.name }}</span>
+                                    <span>{{ p.year }}</span>
+                                    <span>{{ p.duration }}</span>
                                 </p>
                                 <div class="film-play">
                                     <button><i class="fa fa-play"></i></button>
@@ -30,220 +36,9 @@
                     </a>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 film film-main-grid">
-                <div class="film-container">
-                    <div class="film-wrapper">
-                        <div class="film-wrapper" style="background-image: url('/images/dummy/oblivion.jpg');">
-                            <section class="film-infos">
-                                <h2>Oblivion</h2>
-                                <p>
-                                    <span>Science-fiction</span>
-                                    <span>2014</span>
-                                    <span>2h41</span>
-                                </p>
-                                <div class="film-play">
-                                    <button><i class="fa fa-play"></i></button>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 film film-main-grid">
-                <div class="film-container">
-                    <div class="film-wrapper">
-                        <a href="film/interstellar.php" alt="Interstellar" title="Interstellar">
-                            <div class="film-wrapper" style="background-image: url('/images/dummy/interstellar.jpg');">
-                                <section class="film-infos">
-                                    <h2>Interstellar</h2>
-                                    <p>
-                                        <span>Science-fiction</span>
-                                        <span>2014</span>
-                                        <span>3h02</span>
-                                    </p>
-                                    <div class="film-play">
-                                        <button><i class="fa fa-play"></i></button>
-                                    </div>
-                                </section>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 film film-main-grid">
-                <div class="film-container">
-                    <div class="film-wrapper">
-                        <div class="film-wrapper" style="background-image: url('/images/dummy/quantum-of-solace.jpg');">
-                            <section class="film-infos">
-                                <h2>Quantum of Solace</h2>
-                                <p>
-                                    <span>Action</span>
-                                    <span>2011</span>
-                                    <span>2h23</span>
-                                </p>
-                                <div class="film-play">
-                                    <button><i class="fa fa-play"></i></button>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 film film-main-grid">
-                <div class="film-container">
-                    <div class="film-wrapper">
-                        <a href="film/ted-2.php" alt="Ted 2" title="Ted 2">
-                            <div class="film-wrapper" style="background-image: url('/images/dummy/ted.jpg');">
-                                <section class="film-infos">
-                                    <h2>Ted</h2>
-                                    <p>
-                                        <span>Comédie</span>
-                                        <span>2012</span>
-                                        <span>1h16</span>
-                                    </p>
-                                    <div class="film-play">
-                                        <button><i class="fa fa-play"></i></button>
-                                    </div>
-                                </section>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 film film-main-grid">
-                <div class="film-container">
-                    <div class="film-wrapper">
-                        <div class="film-wrapper" style="background-image: url('/images/dummy/simpson.jpg');">
-                            <section class="film-infos">
-                                <h2>Les Simpsons</h2>
-                                <p>
-                                    <span>Aventure</span>
-                                    <span>2010</span>
-                                    <span>1h38</span>
-                                </p>
-                                <div class="film-play">
-                                    <button><i class="fa fa-play"></i></button>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row row-film">
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 film film-main-grid">
-                <div class="film-container">
-                    <div class="film-wrapper" style="background-image: url('/images/dummy/fast_and_furious.jpg');">
-                        <section class="film-infos">
-                            <h2>Fast and Furious</h2>
-                            <p>
-                                <span>Course</span>
-                                <span>2008</span>
-                                <span>1h35</span>
-                            </p>
-                            <div class="film-play">
-                            <button><i class="fa fa-play"></i></button>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 film film-main-grid">
-                <div class="film-container">
-                    <div class="film-wrapper">
-                        <div class="film-wrapper" style="background-image: url('/images/dummy/oblivion.jpg');">
-                            <section class="film-infos">
-                                <h2>Oblivion</h2>
-                                <p>
-                                    <span>Science-fiction</span>
-                                    <span>2014</span>
-                                    <span>2h41</span>
-                                </p>
-                                <div class="film-play">
-                                    <button><i class="fa fa-play"></i></button>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 film film-main-grid">
-                <div class="film-container">
-                    <div class="film-wrapper">
-                        <div class="film-wrapper" style="background-image: url('/images/dummy/interstellar.jpg');">
-                            <section class="film-infos">
-                                <h2>Interstellar</h2>
-                                <p>
-                                    <span>Science-fiction</span>
-                                    <span>2014</span>
-                                    <span>3h02</span>
-                                </p>
-                                <div class="film-play">
-                                    <button><i class="fa fa-play"></i></button>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 film film-main-grid">
-                <div class="film-container">
-                    <div class="film-wrapper">
-                        <div class="film-wrapper" style="background-image: url('/images/dummy/quantum-of-solace.jpg');">
-                            <section class="film-infos">
-                                <h2>Quantum of Solace</h2>
-                                <p>
-                                    <span>Action</span>
-                                    <span>2011</span>
-                                    <span>2h23</span>
-                                </p>
-                                <div class="film-play">
-                                    <button><i class="fa fa-play"></i></button>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 film film-main-grid">
-                <div class="film-container">
-                    <div class="film-wrapper">
-                        <div class="film-wrapper" style="background-image: url('/images/dummy/ted.jpg');">
-                            <section class="film-infos">
-                                <h2>Ted</h2>
-                                <p>
-                                    <span>Comédie</span>
-                                    <span>2012</span>
-                                    <span>1h16</span>
-                                </p>
-                                <div class="film-play">
-                                    <button><i class="fa fa-play"></i></button>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 film film-main-grid">
-                <div class="film-container">
-                    <div class="film-wrapper">
-                        <div class="film-wrapper" style="background-image: url('/images/dummy/simpson.jpg');">
-                            <section class="film-infos">
-                                <h2>Les Simpsons</h2>
-                                <p>
-                                    <span>Aventure</span>
-                                    <span>2010</span>
-                                    <span>1h38</span>
-                                </p>
-                                <div class="film-play">
-                                    <button><i class="fa fa-play"></i></button>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+	{% endfor %}
+    
+	</div>
     </div>
 
     <div id="load-more">

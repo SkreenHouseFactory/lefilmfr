@@ -26,11 +26,12 @@ abstract class BaseController {
        ),
     ));
     //$client->setDefaultOption('auth', array('clever', 'uEEaWJ9', 'Basic'));
-    $request = $client->get($path.(strstr($path, '?') ? '&' : '?').'fromWebsite=v3');
+    $url = $path.(strstr($path, '?') ? '&' : '?').'skKey=6bc791699a6e1f21979b418a22826c4c';
+    $request = $client->get($url);
     //$request->setBody($this->getUserQuery($user));
     try {
       $response = $request->send();
-      //print_r((string)$response->getBody());
+      //print_r((string)$url);
       return $response->json();
     } catch(\Exception $e){
       die('<error>API error</error> '.$e->getMessage());

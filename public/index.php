@@ -76,6 +76,9 @@ $app->get('/', function () use ($app) {
 $app->post('/recherche', function () use ($app) {
     $app->smart_controller->render('Home', 'search');
 });
+$app->get('/films/:slug', function ($slug) use ($app) {
+    $app->smart_controller->render('Home', 'categorie', array('categorie' => $slug));
+});
 $app->get('/film/:id-:slug', function ($id, $slug) use ($app) {
     $app->smart_controller->render('Film', 'fiche', array('id' => (int)$id));
 });

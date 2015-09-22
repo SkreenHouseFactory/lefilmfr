@@ -48,4 +48,13 @@
     <!-- LIBRARIES -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+    #film #player iframe, #film #player div {
+      height: 300px;
+      width: 100%;
+    }
+    </style>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="/scripts/jquery-cookie.js"></script>
 </head>

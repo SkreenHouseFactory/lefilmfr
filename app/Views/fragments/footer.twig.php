@@ -10,7 +10,7 @@
                 <a href="" target="_blank" title="Lien vers le compte Google+ de lefilm.fr"><i class="fa fa-google-plus-square"></i></a>
             </div>
         </div>
-        <div class="row in-this-time">
+        {#<div class="row in-this-time">
             <div class="col-md-12">
                 <h3>En ce moment</h3>
             </div>
@@ -66,6 +66,7 @@
                 <!-- <a href="" class="pull-right"><img src="./images/btn-android-footer2.png" alt="Retrouvez l'application mobile sur l'appStore"></a>
                 <a href="" class="pull-right"><img src="./images/btn-appstore-footer2.png" alt="Retrouvez l'application mobile sur le Google Play"></a> -->
             </div>
+        #}
 
         </div>
 

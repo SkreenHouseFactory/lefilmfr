@@ -3,7 +3,6 @@
         <div class="row">
             <div class="col-lg-8 col-md-9 col-sm-8 col-xs-12">
                 <div id="player" itemprop="video" itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject">
-                    <i class="fa fa-play"></i>
                     {% if film.teaser.player is defined and film.teaser.player and film.teaser.player.url %}
                       <a name="teaser"></a>
                       <div id="program-teaser" itemscope itemtype="http://www.schema.org/VideoObject" itemref="md-about">  
@@ -14,7 +13,7 @@
                         <meta itemprop="width" content="637" />
                         <meta itemprop="height" content="368" />
                         <meta itemprop="playerType" content="Flash" />
-                        <meta itemprop="url" content="http://www.myskreen.com/{{ film.seo_url }}" />
+                        <meta itemprop="url" content="/{{ p.seo_url|split('/')[4] ? p.seo_url|split('/')[4] : p.seo_url|split('/')[3] }}" />
                         <meta itemprop="name" content="{{ film.title|replace({'"': ''}) }}" />
                         <meta itemprop="isFamilyFriendly" content=true />
                         <meta itemprop="description" content="{{ film.description_text|striptags|replace({"\n": ' '})|slice(0,400) }}..." />
@@ -44,16 +43,24 @@
                 <div class="film-info-wrapper">
                     <h1 itemprop="name">{{ film.title }}</h1>
                     <p><strong>Date de sortie:</strong> <time itemprop="datePublished">{{ film.year }}</time></p>
-                    <p itemprop="duration" content="PT119M"><strong>Durée:</strong> {{ film.duration }}</p>
+                    <p itemprop="duration" content="PT{{ film.duration }}M"><strong>Durée:</strong> {{ film.duration }}</p>
                     <p itemprop="genre"><strong>Genre:</strong> {{ film.format.name }}</p>
-                    <p><strong>Nationalité:</strong> <?php print $film["country"]; ?></p>
+                    {#<p><strong>Nationalité:</strong> <?php print $film["country"]; ?></p>#}
                 </div>
                 <div class="film-info-wrapper">
-                    <p itemprop="director"><strong>Réalisateur:</strong> <?php print $film["realisator"]; ?></p>
+                    <p itemprop="director"><strong>Réalisateur:</strong> 
+                    {% for relation,persons in film.casting if relation in ['Réalisateur'] and persons|length %} 
+                    {% for pers in persons   %}
+                      <div {% if relation != 'out' %} itemprop="{{ relation }}" itemscope itemtype="{{ relation == 'productionCompany' ? 'http://schema.org/Organization' : 'http://schema.org/Person' }}"{% endif %} data-id="{{ pers.id }}">
+                        <span {% if relation != 'out' %}itemprop="url"{% endif %} class="fav fav-person" data-name="{{ pers.name }}" data-placement="right"><span {% if relation != 'out' %}itemprop="name"{% endif %}>{{ pers.name }}</span></span> 
+                      </div>
+                    {% endfor %}
+                    {% endfor %}
+                    </p>
                 </div>
                 <div class="film-info-wrapper">
                     <p itemprop="actors"><strong>Avec:</strong>
-                    {% for relation,persons in film.casting if persons|length %} 
+                    {% for relation,persons in film.casting if relation in ['Acteur'] and persons|length %} 
                     {% for pers in persons   %}
                       <div {% if relation != 'out' %} itemprop="{{ relation }}" itemscope itemtype="{{ relation == 'productionCompany' ? 'http://schema.org/Organization' : 'http://schema.org/Person' }}"{% endif %} data-id="{{ pers.id }}">
                         <span {% if relation != 'out' %}itemprop="url"{% endif %} class="fav fav-person" data-name="{{ pers.name }}" data-placement="right"><span {% if relation != 'out' %}itemprop="name"{% endif %}>{{ pers.name }}</span></span> 
@@ -66,6 +73,6 @@
         </div>
     </div>
     <div class="synopsis-container">
-        <p itemprop="description">{{ film.description }}</p>
+        <p itemprop="description">{{ film.description|raw }}</p>
     </div>
 </article>

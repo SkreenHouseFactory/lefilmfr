@@ -11,38 +11,59 @@
 {% block content %}
     <div class="container-fluid" id="grid">
         <div class="row row-film">
-
-	{% for p in programs %}
-    {% if loop.index is divisible by(6) %}
-      </div>
-      <div class="row row-film">
-    {% endif %}
-	      <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 film film-main-grid">
-                <div class="film-container">
-                    <a href="/film/{{ p.seo_url|split('/')[3] }}" alt="{{ p.title }}" title="{{ p.title }}">
-                        <div class="film-wrapper" style="background-image: url('{{ p.picture }}');">
-                            <section class="film-infos">
-                                <h2>{{ p.title }}</h2>
-                                <p>
-                                    <span>{{ p.categories|first.name }}</span>
-                                    <span>{{ p.year }}</span>
-                                    <span>{{ p.duration }}</span>
-                                </p>
-                                <div class="film-play">
-                                    <button><i class="fa fa-play"></i></button>
-                                </div>
-                            </section>
-                        </div>
-                    </a>
-                </div>
+        {% for p in programs %}
+              <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 film film-main-grid">
+                      <div class="film-container">
+                          <a href="/film/{{ p.seo_url|split('/')[3] }}" alt="{{ p.title }}" title="{{ p.title }}">
+                              <div class="film-wrapper" style="background-image: url('{{ p.picture }}');">
+                                  <section class="film-infos">
+                                      <h2>{{ p.title }}</h2>
+                                      <p>
+                                          <span>{{ p.format.name }}</span>
+                                          <span>{{ p.year }}</span>
+                                          <span>{{ p.duration ? p.duration~'mn' : '' }}</span>
+                                      </p>
+                                      <div class="film-play">
+                                          <button><i class="fa fa-play"></i></button>
+                                      </div>
+                                  </section>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+          {% if loop.index is divisible by(6) %}
             </div>
-	{% endfor %}
-    
-	</div>
+            <div class="row row-film">
+          {% endif %}
+        {% endfor %}
+  
+        </div>
     </div>
 
     <div id="load-more">
         <button><i class="fa fa-spinner"></i>En voir plus</button>
     </div>
+    
+    <script>
+    var page = 1;
+    var is_loading = false;
+    $(window).scroll(function() {
+        console.log('scroll')
+       if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 && 
+           !is_loading) {
+        console.log('loading')
+         is_loading = true;
+         page++;
+         $('#grid.container-fluid').append('<div class="more"></div>')
+         var container = $('#grid.container-fluid .more:last-child')
+         container.load(document.location.href+'?page='+page+' #grid.container-fluid .row-film', function(){
+           is_loading = false;
+           if (!$(container).find('.film-container').length) {
+             $('#load-more').remove()
+           }
+         })
+       }
+    });
+    </script>
     {% include '/fragments/cookies.twig.php' %}
 {% endblock %}
